@@ -43,3 +43,24 @@ jobs:
         run: |
           npm ci
           npm run build
+
+  extension-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install extension dev dependencies
+        working-directory: extension
+        run: |
+          npm ci
+
+      - name: Run ESLint on extension
+        working-directory: extension
+        run: |
+          npx eslint "src/**/*.{ts,tsx}" --ext .ts
