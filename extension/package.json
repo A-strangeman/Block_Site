@@ -9,6 +9,10 @@
   },
   "devDependencies": {
     "@types/chrome": "^0.0.321",
+    "@typescript-eslint/eslint-plugin": "^8.59.4",
+    "@typescript-eslint/parser": "^8.59.4",
+    "eslint": "^10.4.0",
+    "eslint-config-prettier": "^10.1.8",
     "typescript": "^5.8.3"
   }
 }
