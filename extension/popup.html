@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FocusGuard</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="popup">
+      <header>
+        <h1>FocusGuard</h1>
+        <p>Accountable site blocking</p>
+      </header>
+      <section>
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="you@example.com" />
+        <label for="password">Password</label>
+        <input id="password" type="password" placeholder="Choose a strong password" />
+        <div class="row">
+          <button id="register">Register</button>
+          <button id="login">Login</button>
+        </div>
+        <hr />
+        <label for="token">JWT token</label>
+        <input id="token" type="password" placeholder="Paste token" />
+      </section>
+      <section>
+        <label for="domain">Block domain</label>
+        <div class="row">
+          <input id="domain" type="text" placeholder="youtube.com" />
+          <button id="add-site">Add</button>
+        </div>
+      </section>
+      <section>
+        <label for="friend">Friend email / phone</label>
+        <div class="row">
+          <input id="friend" type="text" placeholder="friend@example.com" />
+          <button id="save-friend">Save</button>
+        </div>
+      </section>
+      <section class="actions">
+        <button id="save-token">Save token</button>
+        <button id="unlock" class="secondary">Request unlock</button>
+      </section>
+      <p id="status"></p>
+    </main>
+    <script type="module" src="dist/popup.js"></script>
+  </body>
+</html>

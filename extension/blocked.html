@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blocked by FocusGuard</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: radial-gradient(circle at top, #1f2937, #020617);
+        color: white;
+      }
+      .card {
+        width: min(640px, calc(100vw - 32px));
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 20px;
+        padding: 32px;
+        background: rgba(15, 23, 42, 0.78);
+        backdrop-filter: blur(16px);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      }
+      h1 { margin-top: 0; }
+      code { background: rgba(255,255,255,0.08); padding: 2px 6px; border-radius: 6px; }
+    </style>
+  </head>
+  <body>
+    <main class="card">
+      <h1>Blocked by FocusGuard</h1>
+      <p>This site is blocked until your accountability contact approves access.</p>
+      <p id="domain"></p>
+      <p>Return to your task or request approval from the friend or parent you configured.</p>
+    </main>
+    <script>
+      const params = new URLSearchParams(location.search);
+      const domain = params.get("domain") || "unknown domain";
+      document.getElementById("domain").textContent = `Attempted site: ${domain}`;
+    </script>
+  </body>
+</html>
