@@ -35,4 +35,6 @@ USER app
 
 EXPOSE 8000
 
+HEALTHCHECK --interval=30s --timeout=5s --start-period=5s CMD python -c "import urllib.request,sys; urllib.request.urlopen('http://127.0.0.1:8000/ready'); sys.exit(0)" || exit 1
+
 CMD ["gunicorn", "-k", "uvicorn.workers.UvicornWorker", "app.main:app", "-b", "0.0.0.0:8000", "--workers", "3"]
