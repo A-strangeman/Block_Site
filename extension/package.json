@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "watch": "tsc -p tsconfig.json --watch"
+    "watch": "tsc -p tsconfig.json --watch",
+    "lint": "eslint \"src/**/*.{ts,tsx}\" --ext .ts",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@types/chrome": "^0.0.321",

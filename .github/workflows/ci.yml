@@ -63,4 +63,5 @@ jobs:
       - name: Run ESLint on extension
         working-directory: extension
         run: |
-          npx eslint "src/**/*.{ts,tsx}" --ext .ts
+          npm run lint
+          npm run typecheck
